@@ -1,23 +1,23 @@
 import './TopBar.css';
-import Logo from './images/logo.svg';
-import trello from './images/trello-mark.svg';
-import bell from './images/bell.svg';
-import plus from './images/plus-circle.svg'
-import alert from './images/alert-circle.svg'
-import profile from './images/profile.svg'
+import logo from '../../images/logo.svg';
+import trello from '../../images/trello-mark.svg';
+import bell from '../../images/bell.svg';
+import plus from '../../images/plus-circle.svg';
+import alert from '../../images/alert-circle.svg';
+import profile from '../../images/profile.svg';
 
 function TopBar(){
     return (
         <>
             <div className='topBar'>
                 <div className='logoDiv' style={{display: 'flex'}}>
-                    <img src={Logo} alt="Logo" className='logo' />
-                    <div className='verticalLine'></div>
+                    <img src={logo} alt="logo" className='logo' />
+                    <div className='verticalLine' />
                 </div>
                 <div className='textDiv' style={{display: 'flex'}}>
                     <img src={trello} alt="" className='trello-mark'/>
                     <p className='textBoard'>Boards</p>
-                    <div className='verticalLine'></div>
+                    <div className='verticalLine' />
                 </div>
                 <div className='inputDiv' style={{display: 'flex'}}>
                     <input type="search" className='input' placeholder="Search"/>
