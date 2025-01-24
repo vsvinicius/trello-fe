@@ -5,6 +5,8 @@ import bell from '../../images/bell.svg';
 import plus from '../../images/plus-circle.svg';
 import alert from '../../images/alert-circle.svg';
 import profile from '../../images/profile.svg';
+import '../search/Search'
+import Search from '../search/Search';
 
 function TopBar(){
     return (
@@ -19,9 +21,7 @@ function TopBar(){
                     <p className='textBoard'>Boards</p>
                     <div className='verticalLine' />
                 </div>
-                <div className='inputDiv' style={{display: 'flex'}}>
-                    <input type="search" className='input' placeholder="Search"/>
-                </div>
+                <Search />
                 <div className='icons'>
                     <img src={plus} alt="Icon plus-circle" />
                     <img src={alert} alt="Icon alert-circle" />

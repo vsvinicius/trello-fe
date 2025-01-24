@@ -38,16 +38,6 @@
     margin-left: 20px;
 }
 
-.input{
-    width: 512px;
-    height: 30px;
-    padding: 6px;
-    margin-left: 20px;
-    background-color: #e3e1e18f;
-    border: none;
-    border-radius: 25px;
-}
-
 .icons{
     display: flex;
     gap: 50px;
