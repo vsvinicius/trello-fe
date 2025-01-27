@@ -14,7 +14,7 @@ function Card(){
                 <div style={{marginTop: '20px'}}>
                     <div className='title'><p>Título adicionado aqui</p></div>
                     <div className='text'><p>Conteúdo adicionado aqui</p></div>
-                    <div style={{marginLeft: '180px', marginTop: '30px'}}>
+                    <div className='symbol'>
                         <img src={message} alt="message" />
                         <img src={heart} alt="heart" />
                         <img src={clip} alt="clip" />
