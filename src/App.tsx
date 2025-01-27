@@ -1,4 +1,5 @@
 import TopBar from './components/top-bar/TopBar';
+import Card from './components/card/Card'
 
 
 function App() {
@@ -6,9 +7,7 @@ function App() {
   return (
     <>
       <TopBar />
-      <div>
-        Só um teste
-      </div>
+      <Card />
       </>
   )
 }
