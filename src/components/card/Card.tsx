@@ -7,8 +7,8 @@ import Label from '../label/Label';
 function Card(){
     return(
             <div className="rectangle">
-                <div style={{ display: 'flex' }}>
-                    <Label color='yellow'/>
+                <div style={{ display: 'flex', gap: '1px' }}>
+                    <Label color='orange'/>
                     <Label color='green'/>
                 </div>
                 <div style={{marginTop: '20px'}}>
