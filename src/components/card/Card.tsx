@@ -11,12 +11,8 @@ interface TitleProps{
 }
 
 function Card({content,title, labelColors=[]}: TitleProps ){
-   const labels= [];
 
-   // atualizar essa parte usando .map
-   for(let i=0; i<labelColors.length; i++){
-       labels.push(<Label color={labelColors[i]} key={labelColors[i]}/>)
-   }
+    const labels = labelColors.map((labelColor) => <Label color={labelColor} key={labelColor}/> );
 
     return(
             <div className="rectangle">
