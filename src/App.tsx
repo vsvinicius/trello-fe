@@ -1,14 +1,26 @@
 import TopBar from './components/top-bar/TopBar';
-
+import Card from './components/card/Card'
 
 function App() {
 
   return (
     <>
       <TopBar />
-      <div>
-        Só um teste
-      </div>
+      <Card 
+        title= 'Título'
+        content= 'Conteúdo'
+        labelColors={['#957050']}
+      />
+      <Card 
+        title='Hey'
+        content='Hey you'
+        labelColors={['blue', 'red']}
+      />
+      <Card 
+        title='Hey again'
+        content='Hey you again'
+        labelColors={['blue', 'red','green']}
+      />
       </>
   )
 }
