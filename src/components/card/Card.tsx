@@ -4,13 +4,13 @@ import heart from '../../images/heart.svg';
 import clip from '../../images/clip.svg';
 import Label from '../label/Label';
 
-interface TitleProps{
+interface CardProps{
     title?: string;
     content?: string;
     labelColors?: string[];
 }
 
-function Card({content,title, labelColors=[]}: TitleProps ){
+function Card({content,title, labelColors=[]}: CardProps ){
 
     const labels = labelColors.map((labelColor) => <Label color={labelColor} key={labelColor}/> );
 
