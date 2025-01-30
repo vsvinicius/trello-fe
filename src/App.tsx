@@ -1,5 +1,7 @@
 import TopBar from './components/top-bar/TopBar';
 import Card from './components/card/Card'
+import Empty from './components/empty-card/EmptyCard';
+
 
 function App() {
 
@@ -21,7 +23,8 @@ function App() {
         content='Hey you again'
         labelColors={['blue', 'red','green']}
       />
-      </>
+      <Empty />
+    </>
   )
 }
 
