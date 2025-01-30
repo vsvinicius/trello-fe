@@ -1,16 +1,18 @@
-import './Label.css'
+import "./Label.css";
 
 interface LabelProps {
-    color?: string;
+  color?: string;
 }
 
-function Label(props: LabelProps){
-    return(
-        <div className='line' 
-        style={{
-            backgroundColor: props.color 
-        }} /> 
-    )
+function Label(props: LabelProps) {
+  return (
+    <div
+      className="line"
+      style={{
+        backgroundColor: props.color,
+      }}
+    />
+  );
 }
 
 export default Label;
