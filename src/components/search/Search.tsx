@@ -1,11 +1,11 @@
-import './Search.css'
+import "./Search.css";
 
-function Search(){
-    return(
-        <div className='inputDiv' style={{display: 'flex'}}>
-            <input type="search" className='input' placeholder="Search"/>
-        </div>
-    )  
+function Search() {
+  return (
+    <div className="inputDiv" style={{ display: "flex" }}>
+      <input type="search" className="input" placeholder="Search" />
+    </div>
+  );
 }
 
 export default Search;

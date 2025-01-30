@@ -1,10 +1,10 @@
-.button{
-    width: 362px;
-    height: 160px;
-    border-radius: 10px;
-    border: 1px dashed #D3D3D3;
-    background-color: white;
-    margin-left: 30px;
-    margin-top: 15px;
-    font-size: 16px;
+.button {
+  width: 362px;
+  height: 160px;
+  border-radius: 10px;
+  border: 1px dashed #d3d3d3;
+  background-color: white;
+  margin-left: 30px;
+  margin-top: 15px;
+  font-size: 16px;
 }
