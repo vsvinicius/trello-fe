@@ -8,9 +8,23 @@ function App() {
   return (
     <>
       <TopBar />
-      <Card />
+      <Card 
+        title= 'Título'
+        content= 'Conteúdo'
+        labelColors={['#957050']}
+      />
+      <Card 
+        title='Hey'
+        content='Hey you'
+        labelColors={['blue', 'red']}
+      />
+      <Card 
+        title='Hey again'
+        content='Hey you again'
+        labelColors={['blue', 'red','green']}
+      />
       <Empty />
-      </>
+    </>
   )
 }
 

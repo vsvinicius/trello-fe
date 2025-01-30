@@ -4,16 +4,24 @@ import heart from '../../images/heart.svg';
 import clip from '../../images/clip.svg';
 import Label from '../label/Label';
 
-function Card(){
+interface TitleProps{
+    title?: string;
+    content?: string;
+    labelColors?: string[];
+}
+
+function Card({content,title, labelColors=[]}: TitleProps ){
+
+    const labels = labelColors.map((labelColor) => <Label color={labelColor} key={labelColor}/> );
+
     return(
             <div className="rectangle">
-                <div style={{ display: 'flex', gap: '1px' }}>
-                    <Label color='orange'/>
-                    <Label color='green'/>
+                <div style={{ display: 'flex' }}>
+                    {labels}
                 </div>
                 <div style={{marginTop: '20px'}}>
-                    <div className='title'><p>Título adicionado aqui</p></div>
-                    <div className='text'><p>Conteúdo adicionado aqui</p></div>
+                    <div className='title'><p>{title}</p></div>
+                    <div className='text'><p>{content}</p></div>
                     <div className='symbol'>
                         <img src={message} alt="message" />
                         <img src={heart} alt="heart" />
