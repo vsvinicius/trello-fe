@@ -2,7 +2,10 @@ import { useState } from "react";
 import "./EmptyCard.css";
 import InputCard from "../input-card/InputCard";
 
-function Empty() {
+interface EmptyProps {
+  onAddNewCard: () => void;
+}
+function Empty(props: EmptyProps) {
   const [showInputCard, setshowInputCard] = useState(false);
   function openInputCard() {
     setshowInputCard(true);
@@ -11,7 +14,9 @@ function Empty() {
     setshowInputCard(false);
   }
   if (showInputCard === true) {
-    return <InputCard onCancel={cancelInputCard} />;
+    return (
+      <InputCard onCancel={cancelInputCard} onAddNewCard={props.onAddNewCard} />
+    );
   }
 
   return (

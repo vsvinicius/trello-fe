@@ -27,6 +27,18 @@ function App() {
     },
   ]);
 
+  function addNewCard() {
+    setCards([
+      ...cards,
+      {
+        column: "toDo",
+        title: "Hey",
+        content: "Hey you",
+        labelColors: ["blue", "red"],
+      },
+    ]);
+  }
+
   const filterToDo = cards.filter((card) => card.column === "toDo");
   const filterInProgress = cards.filter((card) => card.column === "inProgress");
   const filterCompleted = cards.filter((card) => card.column === "completed");
@@ -44,19 +56,19 @@ function App() {
           {filterToDo.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty />
+          <Empty onAddNewCard={addNewCard} />
         </Column>
         <Column title="In progress">
           {filterInProgress.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty />
+          <Empty onAddNewCard={addNewCard} />
         </Column>
         <Column title="Completed">
           {filterCompleted.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty />
+          <Empty onAddNewCard={addNewCard} />
         </Column>
       </div>
     </>

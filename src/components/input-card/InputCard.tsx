@@ -2,6 +2,7 @@ import "./InputCard.css";
 
 interface InputCardProps {
   onCancel: () => void;
+  onAddNewCard: () => void;
 }
 
 function InputCard(props: InputCardProps) {
@@ -27,7 +28,11 @@ function InputCard(props: InputCardProps) {
         >
           Cancel
         </button>
-        <button type="button" className="btnInputCard addCard">
+        <button
+          type="button"
+          className="btnInputCard addCard"
+          onClick={props.onAddNewCard}
+        >
           Add card
         </button>
       </div>
