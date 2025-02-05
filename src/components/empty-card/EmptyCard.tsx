@@ -3,7 +3,7 @@ import "./EmptyCard.css";
 import InputCard from "../input-card/InputCard";
 
 interface EmptyProps {
-  onAddNewCard: () => void;
+  onAddNewCard: (title: string, description: string) => void;
 }
 function Empty(props: EmptyProps) {
   const [showInputCard, setshowInputCard] = useState(false);

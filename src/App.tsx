@@ -27,17 +27,29 @@ function App() {
     },
   ]);
 
-  function addNewCard() {
+  function addNewCard(column: string, title: string, description: string) {
     setCards([
       ...cards,
       {
-        column: "toDo",
-        title: "Hey",
-        content: "Hey you",
+        column: column,
+        title: title,
+        content: description,
         labelColors: ["blue", "red"],
       },
     ]);
   }
+
+  // const addNewCard = (column: string) => {
+  //   setCards([
+  //     ...cards,
+  //     {
+  //       column: column,
+  //       title: "Hey",
+  //       content: "Hey you",
+  //       labelColors: ["blue", "red"],
+  //     },
+  //   ]);
+  // };
 
   const filterToDo = cards.filter((card) => card.column === "toDo");
   const filterInProgress = cards.filter((card) => card.column === "inProgress");
@@ -56,19 +68,31 @@ function App() {
           {filterToDo.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty onAddNewCard={addNewCard} />
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("toDo", title, description)
+            }
+          />
         </Column>
         <Column title="In progress">
           {filterInProgress.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty onAddNewCard={addNewCard} />
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("inProgress", title, description)
+            }
+          />
         </Column>
         <Column title="Completed">
           {filterCompleted.map(({ content, labelColors, title }) => (
             <Card title={title} content={content} labelColors={labelColors} />
           ))}
-          <Empty onAddNewCard={addNewCard} />
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("completed", title, description)
+            }
+          />
         </Column>
       </div>
     </>
