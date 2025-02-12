@@ -3,8 +3,58 @@ import Card from "./components/card/Card";
 import Empty from "./components/empty-card/EmptyCard";
 
 import Column from "./components/column/Column";
+import { useState } from "react";
 
 function App() {
+  const [cards, setCards] = useState([
+    {
+      column: "toDo",
+      title: "Hey",
+      content: "Hey you",
+      labelColors: ["blue", "red"],
+    },
+    {
+      column: "inProgress",
+      title: "Hey",
+      content: "Hey you",
+      labelColors: ["black", "orange"],
+    },
+    {
+      column: "completed",
+      title: "Hey",
+      content: "Hey you",
+      labelColors: ["green", "pink"],
+    },
+  ]);
+
+  function addNewCard(column: string, title: string, description: string) {
+    setCards([
+      ...cards,
+      {
+        column: column,
+        title: title,
+        content: description,
+        labelColors: ["blue", "red"],
+      },
+    ]);
+  }
+
+  // const addNewCard = (column: string) => {
+  //   setCards([
+  //     ...cards,
+  //     {
+  //       column: column,
+  //       title: "Hey",
+  //       content: "Hey you",
+  //       labelColors: ["blue", "red"],
+  //     },
+  //   ]);
+  // };
+
+  const filterToDo = cards.filter((card) => card.column === "toDo");
+  const filterInProgress = cards.filter((card) => card.column === "inProgress");
+  const filterCompleted = cards.filter((card) => card.column === "completed");
+
   return (
     <>
       <TopBar />
@@ -15,36 +65,34 @@ function App() {
         }}
       >
         <Column title="To do">
-          <Card title="Hey" content="Hey you" labelColors={["blue", "red"]} />
-          <Card
-            title="Hey again"
-            content="Hey you again"
-            labelColors={["blue", "red", "green"]}
+          {filterToDo.map(({ content, labelColors, title }) => (
+            <Card title={title} content={content} labelColors={labelColors} />
+          ))}
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("toDo", title, description)
+            }
           />
-          <Card
-            title="Hey again"
-            content="Hey you again again"
-            labelColors={["blue", "red", "green", "pink"]}
-          />
-          <Empty />
         </Column>
         <Column title="In progress">
-          <Card title="Hey" content="Hey you" labelColors={["blue", "red"]} />
-          <Card
-            title="Hey again"
-            content="Hey you again"
-            labelColors={["blue", "red", "green"]}
+          {filterInProgress.map(({ content, labelColors, title }) => (
+            <Card title={title} content={content} labelColors={labelColors} />
+          ))}
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("inProgress", title, description)
+            }
           />
-          <Empty />
         </Column>
         <Column title="Completed">
-          <Card title="Hey" content="Hey you" labelColors={["blue", "red"]} />
-          <Card
-            title="Hey again"
-            content="Hey you again"
-            labelColors={["blue", "red", "green"]}
+          {filterCompleted.map(({ content, labelColors, title }) => (
+            <Card title={title} content={content} labelColors={labelColors} />
+          ))}
+          <Empty
+            onAddNewCard={(title, description) =>
+              addNewCard("completed", title, description)
+            }
           />
-          <Empty />
         </Column>
       </div>
     </>
